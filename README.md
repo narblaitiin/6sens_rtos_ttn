@@ -14,7 +14,7 @@ LoRaWAN Device EUI, Join EUI and Application Key should be entered into the app_
 The example stores the DevNonce in NVS (Non-volatile Storage) as per LoRaWAN 1.0.4 Specifications.
 The version of Zephyr RTOS used is the version v3.6.0.
 
-**Board used** : Original MBDT50Q board, powered by battery/solar panel. (see 6sens_project_nrf52 repository/hardware part, for more information.)
+**Board used** : Original MDBT50Q board, powered by battery/solar panel. (see 6sens_project_nrf52 repository/hardware part, for more information.)
 
 ## General Information of Application
 You will need to register new devices in your application (with OTAA activation method). Once this is done, retain the TTN Device Address(4 Bytes), the TTN Network Key(16 Bytes) and the TTN Application Key (16 Bytes). You also have to make sure that the activation method is OTAA.
