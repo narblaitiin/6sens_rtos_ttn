@@ -2,7 +2,7 @@
 
 ## Overview
 This application contains example code to allow testing of LoRaWAN Network Application.
-This code also allows to test a physical link from the node to the gateway then from the gateway to TTN. The version of Zephyr RTOS used is the version v3.6.0.
+This code also allows to test a physical link from the node to the gateway then from the gateway to TTN.
 
 The packets sent have the following characteristics:
 
@@ -12,7 +12,7 @@ The packets sent have the following characteristics:
 
 LoRaWAN Device EUI, Join EUI and Application Key should be entered into the app_lorawan.h file prior to compiling.
 The example stores the DevNonce in NVS (Non-volatile Storage) as per LoRaWAN 1.0.4 Specifications.
-The version of Zephyr RTOS used is the version v3.6.0.
+The version of Zephyr RTOS used is the version v4.0.0.
 
 ## General Information of Application
 You will need to register new devices in your application (with OTAA activation method). Once this is done, retain the TTN Device Address(4 Bytes), the TTN Network Key(16 Bytes) and the TTN Application Key (16 Bytes). You also have to make sure that the activation method is OTAA.
