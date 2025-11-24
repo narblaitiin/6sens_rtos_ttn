@@ -31,7 +31,7 @@ You will need to register new devices in your application (with OTAA activation 
         AppSKey                         random value for 16-byte address
 
 ## Board used
-Original MDBT50Q board, powered by battery/solar panel. (see 6sens_project_nrf52 repository/hardware part, for more information.)
+Original MDBT50Q board, powered by battery/solar panel. (see 6sens_project repository/hardware part, for more information.)
 
 ## Building and Running
 The following commands clean build folder, build and flash the sample:
