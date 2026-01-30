@@ -6,9 +6,9 @@ This code also allows to test a physical link from the node to the gateway then 
 
 The packets sent have the following characteristics:
 
-    - String of characters : "hello world!'
+    - String of characters : "hello world!"
     - Number of packets : 5
-    - Number of nodes : 5  
+    - Number of nodes : 3  
 
 LoRaWAN Device EUI, Join EUI and Application Key should be entered into the app_lorawan.h file prior to compiling.
 The example stores the DevNonce in NVS (Non-volatile Storage) as per LoRaWAN 1.0.4 Specifications. The version of Zephyr RTOS used is the version v4.0.0.
