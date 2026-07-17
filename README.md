@@ -10,8 +10,7 @@ The packets sent have the following characteristics:
     - Number of packets : 5
     - Number of nodes : 3  
 
-LoRaWAN Device EUI, Join EUI and Application Key should be entered into the app_lorawan.h file prior to compiling.
-The example stores the DevNonce in NVS (Non-volatile Storage) as per LoRaWAN 1.0.4 Specifications. The version of Zephyr RTOS used is the version v4.0.0.
+LoRaWAN Device EUI, Join EUI and Application Key should be entered into the app_lorawan.h file prior to compiling. The version of Zephyr RTOS used is the version v4.0.0.
 
 ## General Information of Application
 You will need to register new devices in your application (with OTAA activation method). Once this is done, retain the TTN Device Address(4 Bytes), the TTN Network Key(16 Bytes) and the TTN Application Key (16 Bytes). You also have to make sure that the activation method is OTAA.
