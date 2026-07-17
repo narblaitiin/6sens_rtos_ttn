@@ -10,8 +10,7 @@
 
 //  ========== globals =====================================================================
 // define GPIO specifications for the LEDs used to indicate transmission (TX) and reception (RX)
-static const struct gpio_dt_spec led_tx = GPIO_DT_SPEC_GET(LED_TX, gpios);
-static const struct gpio_dt_spec led_rx = GPIO_DT_SPEC_GET(LED_RX, gpios);
+static const struct gpio_dt_spec led_tx = GPIO_DT_SPEC_GET(LED_0, gpios);
 
 static void dl_callback(uint8_t port, bool data_pending,
 			int16_t rssi, int8_t snr,
@@ -36,16 +35,7 @@ int8_t main(void)
 
 	// configure LEDs for TX and RX indication
 	gpio_pin_configure_dt(&led_tx, GPIO_OUTPUT_ACTIVE);
-	gpio_pin_configure_dt(&led_rx, GPIO_OUTPUT_ACTIVE);
 	gpio_pin_set_dt(&led_tx, 0);		// turn off TX LED
-	gpio_pin_set_dt(&led_rx, 0);		// turn off TX LED
-
-	// initialize LoRaWAN protocol and register the device
-	// ret = app_lorawan_init();
-	// if (ret != 1) {
-	// 	printk("failed to initialze LoRaWAN protocol\n");
-	// 	return 0;
-	// }
 
 	const struct device *lora_dev;
 	struct lorawan_join_config join_cfg;
@@ -80,7 +70,7 @@ int8_t main(void)
 	}
 
 	// indicate device activity by toggling the reception LED
-	gpio_pin_set_dt(&led_rx, 1);
+	gpio_pin_set_dt(&led_tx, 1);
 
 	// enable Adaptive Data Rate (ADR) to optimize communication settings
     lorawan_enable_adr(true);
@@ -99,7 +89,6 @@ int8_t main(void)
 	join_cfg.otaa.join_eui = join_eui;
 	join_cfg.otaa.app_key = app_key;
 	join_cfg.otaa.nwk_key = app_key;
-	join_cfg.otaa.dev_nonce = 0u;
 
 	printk("joining network over OTAA\n");
 	ret = lorawan_join(&join_cfg);
@@ -109,12 +98,12 @@ int8_t main(void)
 	}
 
 	// turn off LEDs to indicate the end of the process
-	gpio_pin_set_dt(&led_rx, 0);
+	gpio_pin_set_dt(&led_tx, 0);
 	printk("Test of LoRaWAN and TTN\n");
 
 	// start the main loop for data simulation and transmission
-	for (int8_t i = 0; i < 5; i++) {
-
+	//for (int8_t i = 0; i < 5; i++) {
+	while(1) {
 		// indicate data transmission with the TX LED
 		printk("sending random data...\n");
 		gpio_pin_set_dt(&led_tx, 1);
